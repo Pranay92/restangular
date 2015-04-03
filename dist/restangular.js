@@ -18,6 +18,7 @@ restangular.provider('Restangular', function() {
      */
     var safeMethods= ['get', 'head', 'options', 'trace', 'getlist'];
     config.isSafe = function(operation) {
+      if(!operation) return false;
       return _.contains(safeMethods, operation.toLowerCase());
     };
 
